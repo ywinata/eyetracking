@@ -16,11 +16,6 @@ camera = Camera()
 camera.open()
 
 logger.info("EyeTrax Prototype started.")
-print("=" * 50)
-print("EyeTrax Prototype")
-print("=" * 50)
-print("Resolution :", camera.resolution())
-print()
 
 while True:
 
@@ -66,8 +61,7 @@ while True:
         cv2.imwrite(str(filename), frame)
 
         logger.info(f"Screenshot saved : {filename}")
-        print("Saved :", filename)
-
+    
     # Exit
     elif key == 27:
         logger.info("Application closed.")
