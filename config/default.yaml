@@ -17,7 +17,7 @@ results:
 
 experiment:
   screenshot_key: s
-  exit_key: esc
+  exit_key: 27 # Escape key
 
 logging:
   directory: logs

@@ -4,6 +4,8 @@ from pathlib import Path
 
 from config import settings
 
+_initialized = False
+
 
 def get_logger(name: str) -> logging.Logger:
     """
@@ -18,9 +20,11 @@ def get_logger(name: str) -> logging.Logger:
     -------
     logging.Logger
     """
-
+    
+    global _initialized
+    
     logger = logging.getLogger(name)
-
+    
     # Prevent duplicate handlers
     if logger.handlers:
         return logger
@@ -58,11 +62,13 @@ def get_logger(name: str) -> logging.Logger:
     # Register handlers
     logger.addHandler(console_handler)
     logger.addHandler(file_handler)
-
+    
     # Session header
-    logger.info("=" * 60)
-    logger.info("Logger initialized")
-    logger.info("Log file : %s", logfile)
-    logger.info("=" * 60)
+    if not _initialized:
+        logger.info("=" * 60)
+        logger.info("Logger initialized")
+        logger.info(f"Log file : {logfile}")
+        logger.info("=" * 60)
+        _initialized = True 
 
     return logger

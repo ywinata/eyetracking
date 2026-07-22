@@ -1,7 +1,0 @@
-2026-07-22 11:16:46,348 | INFO     | tracker.camera | Opening webcam...
-2026-07-22 11:16:48,177 | INFO     | tracker.camera | Camera opened.
-2026-07-22 11:16:48,177 | INFO     | tracker.camera | Resolution : (1280, 720)
-2026-07-22 11:16:48,177 | INFO     | app | EyeTrax Prototype started.
-2026-07-22 11:16:55,374 | INFO     | app | Screenshot saved : results\frame_1784693815.png
-2026-07-22 11:16:56,999 | INFO     | app | Application closed.
-2026-07-22 11:16:57,456 | INFO     | tracker.camera | Camera released.

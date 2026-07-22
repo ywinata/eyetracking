@@ -28,6 +28,13 @@ class Camera:
         logger.info(f"Resolution : {self.resolution()}")
 
         self.start_time = time.time()
+    
+    def is_opened(self) -> bool:
+        """Return True if the webcam is opened."""
+        return (
+            self.cap is not None
+            and self.cap.isOpened()
+        )
 
     def read(self):
 
@@ -57,7 +64,5 @@ class Camera:
 
         if self.cap:
             self.cap.release()
-
-        cv2.destroyAllWindows()
         
         logger.info("Camera released.")

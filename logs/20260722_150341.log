@@ -1,0 +1,12 @@
+2026-07-22 15:03:41,540 | INFO     | Camera       | ============================================================
+2026-07-22 15:03:41,540 | INFO     | Camera       | Logger initialized
+2026-07-22 15:03:41,540 | INFO     | Camera       | Log file : logs\20260722_150341.log
+2026-07-22 15:03:41,540 | INFO     | Camera       | ============================================================
+2026-07-22 15:03:41,542 | INFO     | Camera       | Opening webcam...
+2026-07-22 15:03:43,242 | INFO     | Camera       | Camera opened.
+2026-07-22 15:03:43,242 | INFO     | Camera       | Resolution : (1280, 720)
+2026-07-22 15:03:43,242 | INFO     | App          | EyeTrax Prototype started.
+2026-07-22 15:03:44,770 | INFO     | App          | Screenshot saved: results\frame_1784707424.png
+2026-07-22 15:03:46,565 | INFO     | App          | Application closed.
+2026-07-22 15:03:46,989 | INFO     | Camera       | Camera released.
+2026-07-22 15:03:47,030 | INFO     | App          | Application terminated.
