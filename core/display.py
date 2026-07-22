@@ -23,6 +23,11 @@ class Display:
             "position": (20, 95),
             "color": (0, 0, 255),
         },
+        "landmark": {
+            "color": (255,0,255),
+            "radius": 2,
+            "thickness": -1,
+        },
         "recording": {
             "position": (20, 95),
             "color": (0, 0, 255),
@@ -145,6 +150,28 @@ class Display:
         )
     
     @classmethod
+    def draw_landmarks(cls, frame, landmarks):
+        """Draw facial landmarks."""
+
+        if landmarks is None:
+            return
+
+        height, width = frame.shape[:2]
+
+        for x, y, _ in landmarks:
+
+            px = int((x + 0.5) * width)
+            py = int((y + 0.5) * height)
+
+            cv2.circle(
+                frame,
+                (px, py),
+                cls.OVERLAY["landmark"]["radius"],
+                cls.OVERLAY["landmark"]["color"],
+                cls.OVERLAY["landmark"]["thickness"],
+            )
+    
+    @classmethod
     def draw_recording(cls, frame) -> None:
         cls.draw_item(
             frame,
@@ -187,8 +214,10 @@ class Display:
         fps: float,
         frame_count: int,
         blink: bool = False,
+        landmarks = None,
     ) -> None:
         """Draw default overlay."""
         cls.draw_fps(frame, fps)
         cls.draw_frame_count(frame, frame_count)
         cls.draw_blink(frame, blink)
+        cls.draw_landmarks(frame, landmarks)

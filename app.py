@@ -50,7 +50,8 @@ def main():
                 frame,
                 fps=camera.fps(),
                 frame_count=camera.frame_count,
-                blink=result.blink
+                blink=result.blink,
+                landmarks=result.landmarks
             )
             
             Display.show(frame)
