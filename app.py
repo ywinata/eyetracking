@@ -8,19 +8,25 @@ from tracker.camera import Camera
 from core.logger import get_logger
 from core.display import Display
 from core.utils import save_frame
+from tracker.eyetracker import EyeTracker
 
 def main():
     """Main application."""
-    
-    logger = get_logger("App")
-
     Path(settings.results.directory).mkdir(
         parents=True,
         exist_ok=True
     )
+    
+    logger = get_logger("App")
+    tracker = EyeTracker()
 
     camera = Camera()
-
+    tracker.initialize()
+    
+    if not tracker.is_initialized():
+        logger.error("EyeTrax initialization failed.")
+        return
+    
     try:
         camera.open()
         
@@ -33,15 +39,18 @@ def main():
         while True:
 
             frame = camera.read()
-
+            
             if frame is None:
                 logger.warning("No frame received.")
                 break
             
+            result = tracker.process(frame)
+            
             Display.draw_overlay(
                 frame,
                 fps=camera.fps(),
-                frame_count=camera.frame_count
+                frame_count=camera.frame_count,
+                blink=result.blink
             )
             
             Display.show(frame)
@@ -65,6 +74,7 @@ def main():
         logger.exception("Unexpected error.")
         
     finally:
+        tracker.close()
         camera.release()
         Display.close()
         logger.info("Application terminated.")

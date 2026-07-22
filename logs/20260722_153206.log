@@ -1,0 +1,13 @@
+2026-07-22 15:32:06,531 | INFO     | EyeTracker   | Loading EyeTrax...
+2026-07-22 15:32:07,533 | INFO     | EyeTracker   | EyeTrax initialized.
+2026-07-22 15:32:09,372 | INFO     | App          | EyeTrax Prototype started.
+2026-07-22 15:32:09,947 | ERROR    | App          | Unexpected error.
+Traceback (most recent call last):
+  File "c:\Users\ywinata_kadence\Documents\CV Code\eyetracking\app.py", line 49, in main
+    Display.draw_overlay(
+  File "c:\Users\ywinata_kadence\Documents\CV Code\eyetracking\core\display.py", line 194, in draw_overlay
+    cls.draw_blink(frame, blink)
+  File "c:\Users\ywinata_kadence\Documents\CV Code\eyetracking\core\display.py", line 143, in draw_blink
+    cls.BLINK["position"],
+AttributeError: type object 'Display' has no attribute 'BLINK'
+2026-07-22 15:32:10,378 | INFO     | App          | Application terminated.

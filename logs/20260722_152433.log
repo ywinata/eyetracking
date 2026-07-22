@@ -1,0 +1,9 @@
+2026-07-22 15:24:33,008 | INFO     | EyeTracker   | Loading EyeTrax...
+2026-07-22 15:24:34,025 | INFO     | EyeTracker   | EyeTrax initialized.
+2026-07-22 15:24:35,818 | INFO     | App          | EyeTrax Prototype started.
+2026-07-22 15:24:36,382 | ERROR    | App          | Unexpected error.
+Traceback (most recent call last):
+  File "c:\Users\ywinata_kadence\Documents\CV Code\eyetracking\app.py", line 39, in main
+    features, blink = tracker.extract_features(frame)
+AttributeError: 'EyeTracker' object has no attribute 'extract_features'
+2026-07-22 15:24:36,790 | INFO     | App          | Application terminated.

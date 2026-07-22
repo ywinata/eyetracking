@@ -1,0 +1,6 @@
+2026-07-22 15:58:43,353 | INFO     | EyeTracker   | Loading EyeTrax...
+2026-07-22 15:58:44,359 | INFO     | EyeTracker   | EyeTrax initialized.
+2026-07-22 15:58:45,965 | INFO     | App          | EyeTrax Prototype started.
+2026-07-22 15:58:47,266 | INFO     | App          | Application closed.
+2026-07-22 15:58:47,280 | INFO     | EyeTracker   | EyeTrax released.
+2026-07-22 15:58:47,728 | INFO     | App          | Application terminated.
