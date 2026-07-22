@@ -1,0 +1,29 @@
+camera:
+  index: 0
+  width: 1280
+  height: 720
+  fps: 30
+
+window:
+  title: EyeTrax Prototype
+  fullscreen: false
+
+logging:
+  directory: logs
+  level: INFO
+
+results:
+  directory: results
+
+experiment:
+  screenshot_key: s
+  exit_key: esc
+
+logging:
+  directory: logs
+  level: INFO
+  format: "%(asctime)s | %(levelname)-8s | %(name)-12s | %(message)s"
+
+ui:
+  font_scale: 0.8
+  font_thickness: 2
